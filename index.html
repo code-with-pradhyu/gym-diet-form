@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitLife | Fitness Assessment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container">
+    <header class="header">
+      <div class="logo">FITNESS <span>factory</span></div>
+      <p>PERSONALIZED FITNESS & NUTRITION</p>
+    </header>
+
+    <section class="form-card">
+
+      <div class="intro">
+        <span class="tag">FITNESS ASSESSMENT</span>
+        <h1>Let's build your<br><span>fitness journey.</span></h1>
+        <p>Fill in your details to help us create a personalized fitness plan.</p>
+      </div>
+
+      <div class="progress-info">
+        <span id="stepText">Step 1 of 5</span>
+        <span id="progressPercent">20%</span>
+      </div>
+
+      <div class="progress-bar">
+        <div id="progress"></div>
+      </div>
+
+      <form id="fitnessForm">
+
+        <!-- STEP 1 -->
+        <div class="form-step active">
+          <h2>Personal Details</h2>
+          <p class="section-desc">Let's get to know you.</p>
+
+          <div class="form-grid">
+            <div class="field full">
+              <label>Full Name *</label>
+              <input name="fullName" type="text" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="field">
+              <label>Age *</label>
+              <input name="age" type="number" min="10" max="100" placeholder="Your age" required />
+            </div>
+
+            <div class="field">
+              <label>Gender *</label>
+              <select name="gender" required>
+                <option value="">Select gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Weight (kg) *</label>
+              <input name="weight" type="number" min="1" step="0.1" placeholder="e.g. 60" required />
+            </div>
+
+            <div class="field">
+              <label>Height (cm) *</label>
+              <input name="height" type="number" min="50" max="250" step="0.1" placeholder="e.g. 175" required />
+            </div>
+
+            <div class="field">
+              <label>Body Fat %</label>
+              <input name="bodyFat" type="number" min="1" max="70" step="0.1" placeholder="If known" />
+            </div>
+
+            <div class="field">
+              <label>Occupation</label>
+              <input name="occupation" type="text" placeholder="Your occupation" />
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step">
+          <h2>Fitness & Training</h2>
+          <p class="section-desc">Tell us about your workout routine.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Workout Experience *</label>
+              <select name="experience" required>
+                <option value="">Select</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Gym Timing *</label>
+              <select name="gymTiming" required>
+                <option value="">Select</option>
+                <option>Morning</option>
+                <option>Evening</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Workout Days / Week *</label>
+              <select name="workoutDays" required>
+                <option value="">Select</option>
+                <option>3 Days</option>
+                <option>4 Days</option>
+                <option>5 Days</option>
+                <option>6 Days</option>
+                <option>7 Days</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Current Training Split</label>
+              <input name="trainingSplit" type="text" placeholder="e.g. Push Pull Legs" />
+            </div>
+
+            <div class="field full">
+              <label>Past Injuries or Health Conditions?</label>
+              <textarea name="healthConditions" placeholder="Mention any injuries or health conditions, or write None"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step">
+          <h2>Dietary Preferences</h2>
+          <p class="section-desc">Let's understand your food choices.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Diet Type *</label>
+              <select name="dietType" required>
+                <option value="">Select</option>
+                <option>Vegetarian</option>
+                <option>Non-Vegetarian</option>
+                <option>Eggetarian</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Lactose Tolerance</label>
+              <select name="lactose">
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Mostly Avoid</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label>Food Allergies / Sensitivities</label>
+              <input name="allergies" type="text" placeholder="Mention allergies or None" />
+            </div>
+
+            <div class="field full">
+              <label>Foods You Like</label>
+              <textarea name="foodsLike" placeholder="Your preferred foods"></textarea>
+            </div>
+
+            <div class="field full">
+              <label>Foods You Dislike / Avoid</label>
+              <textarea name="foodsAvoid" placeholder="Foods you don't prefer"></textarea>
+            </div>
+          </div>
+
+          <h3>Preferred Protein Sources</h3>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="protein" value="Lentils & Legumes"> Lentils & Legumes</label>
+            <label><input type="checkbox" name="protein" value="Dairy"> Dairy</label>
+            <label><input type="checkbox" name="protein" value="Eggs"> Eggs</label>
+            <label><input type="checkbox" name="protein" value="Chicken / Meat"> Chicken / Meat</label>
+            <label><input type="checkbox" name="protein" value="Nuts & Seeds"> Nuts & Seeds</label>
+            <label><input type="checkbox" name="protein" value="Tofu / Soy"> Tofu / Soy</label>
+          </div>
+
+          <h3>Preferred Carbohydrates</h3>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="carbs" value="Whole Grains"> Whole Grains</label>
+            <label><input type="checkbox" name="carbs" value="Potatoes"> Potatoes</label>
+            <label><input type="checkbox" name="carbs" value="Fruits"> Fruits</label>
+            <label><input type="checkbox" name="carbs" value="Vegetables"> Vegetables</label>
+          </div>
+
+          <h3>Preferred Fat Sources</h3>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="fats" value="Healthy Oils"> Healthy Oils</label>
+            <label><input type="checkbox" name="fats" value="Nuts & Seeds"> Nuts & Seeds</label>
+            <label><input type="checkbox" name="fats" value="Ghee"> Ghee</label>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step">
+          <h2>Daily Routine</h2>
+          <p class="section-desc">Tell us about your everyday schedule.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Wake-up Time</label>
+              <input name="wakeTime" type="time" />
+            </div>
+
+            <div class="field">
+              <label>Bedtime</label>
+              <input name="bedTime" type="time" />
+            </div>
+
+            <div class="field">
+              <label>Breakfast Timing</label>
+              <input name="breakfastTime" type="text" placeholder="e.g. 8:00 AM" />
+            </div>
+
+            <div class="field">
+              <label>Lunch Timing</label>
+              <input name="lunchTime" type="text" placeholder="e.g. 11:30 AM" />
+            </div>
+
+            <div class="field">
+              <label>Evening Snacks</label>
+              <input name="snacks" type="text" placeholder="What do you eat?" />
+            </div>
+
+            <div class="field">
+              <label>Dinner Timing</label>
+              <input name="dinnerTime" type="text" placeholder="e.g. 7:00 PM" />
+            </div>
+
+            <div class="field full">
+              <label>Usual Breakfast Foods</label>
+              <textarea name="breakfastFoods" placeholder="What do you usually eat?"></textarea>
+            </div>
+
+            <div class="field full">
+              <label>Usual Lunch & Dinner Foods</label>
+              <textarea name="mealFoods" placeholder="Describe your regular meals"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="form-step">
+          <h2>Fitness Goals</h2>
+          <p class="section-desc">What do you want to achieve?</p>
+
+          <div class="field full">
+            <label>Select Your Fitness Goals *</label>
+            <div class="checkbox-grid goals">
+              <label><input type="checkbox" name="goals" value="Fat Loss"> Fat Loss</label>
+              <label><input type="checkbox" name="goals" value="Muscle Gain"> Muscle Gain</label>
+              <label><input type="checkbox" name="goals" value="Strength & Performance"> Strength & Performance</label>
+              <label><input type="checkbox" name="goals" value="General Health"> General Health</label>
+              <label><input type="checkbox" name="goals" value="Endurance"> Improved Endurance</label>
+              <label><input type="checkbox" name="goals" value="Body Recomposition"> Body Recomposition</label>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Target Weight (kg)</label>
+              <input name="targetWeight" type="number" min="1" step="0.1" placeholder="e.g. 70" />
+            </div>
+
+            <div class="field">
+              <label>Focus Body Areas</label>
+              <input name="bodyFocus" type="text" placeholder="e.g. Overall" />
+            </div>
+          </div>
+
+          <div class="consent">
+            <label>
+              <input type="checkbox" name="consent" required />
+              I confirm that the information provided is accurate and consent to its use for preparing my fitness and nutrition plan.
+            </label>
+          </div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="success-screen" id="successScreen">
+          <div class="success-icon">✓</div>
+          <h2>Assessment Completed!</h2>
+          <p>Your details have been submitted successfully.</p>
+        </div>
+
+        <div class="form-buttons" id="formButtons">
+          <button type="button" id="prevBtn" class="btn secondary" disabled>
+            ← Previous
+          </button>
+          <button type="button" id="nextBtn" class="btn primary">
+            Next Step →
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+    <footer>
+      © 2026 FITNESS FACTORY · ALL RIGHTS RESERVED
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
